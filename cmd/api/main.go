@@ -35,9 +35,9 @@ func main() {
 	flag.StringVar(&cfg.dsn, "db-dsn", os.Getenv("DOCUMENT_PDF_DB_DSN"), "PostgreSQL DSN")
 	flag.Parse()
 
-	// Możesz ustawić dsn ręcznie na czas dev/testów
 	if cfg.dsn == "" {
 		cfg.dsn = "postgres://postgres:admin@localhost/pdf_documents?sslmode=disable"
+		// cfg.dsn = "postgres://postgres:admin@localhost:5433/pdf_documents?sslmode=disable"
 	}
 
 	logger := log.New(os.Stdout, "", log.Ldate|log.Ltime)

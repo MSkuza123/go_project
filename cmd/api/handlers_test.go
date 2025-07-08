@@ -217,10 +217,10 @@ func TestDeletePDF(t *testing.T) {
 	router := setupRouter(app)
 
 	if _, err := os.Stat("C:/Users/mskuza/OneDrive - Capgemini/Desktop/Go PDF/cmd/api/ARIAL.TTF"); os.IsNotExist(err) {
-		t.Fatal("Brakuje czcionki ./arial/ARIAL.TTF")
+		t.Fatal("Lack of font ./arial/ARIAL.TTF")
 	}
 	if _, err := os.Stat("C:/Users/mskuza/OneDrive - Capgemini/Desktop/Go PDF/cert.p12"); os.IsNotExist(err) {
-		t.Fatal("Brakuje certyfikatu cert.p12")
+		t.Fatal("Lack of certificate cert.p12")
 	}
 
 	app.models.PDFDocuments.Insert(data.PDFDocument{
